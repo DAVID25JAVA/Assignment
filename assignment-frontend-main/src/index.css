@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rightToLeft {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
+
+.animate-right-to-left {
+    display: inline-block;
+    animation: rightToLeft 15s linear infinite;
+}
+/* Keyframes for bouncing emoji */
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(-10%);
+    }
+    50% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Keyframes for sliding text */
+  @keyframes slideText {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-10px) rotate(20deg);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Hover effects */
+  .hover-container .emoji-container {
+    animation: bounce 0.5s infinite;
+  }
+  
+  .hover-container:hover .text {
+    animation: slideText 1s ease-in-out;
+  }
+  
+
